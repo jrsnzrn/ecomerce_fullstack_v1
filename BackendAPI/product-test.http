@@ -1,0 +1,38 @@
+### LOGIN ADMIN (get token)
+POST http://localhost:5003/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@capstone.com",
+  "password": "Admin123!"
+}
+
+### CREATE CATEGORY (Admin)
+POST http://localhost:5003/api/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBjYXBzdG9uZS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3MDQ4NjE2NiwiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.dLXNOxVmBewXn2uxGY6AY3WZO1J1SW8d13E80TusX3g
+Content-Type: application/json
+
+{
+  "name": "Electronics"
+}
+
+### LIST CATEGORIES (Public)
+GET http://localhost:5003/api/categories
+
+### CREATE PRODUCT (Admin)
+POST http://localhost:5003/api/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBjYXBzdG9uZS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3MDQ4NjE2NiwiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.dLXNOxVmBewXn2uxGY6AY3WZO1J1SW8d13E80TusX3g
+Content-Type: application/json
+
+{
+  "name": "Wireless Mouse",
+  "description": "2.4G wireless mouse",
+  "price": 499.00,
+  "stockQty": 20,
+  "imageUrl": "https://example.com/mouse.jpg",
+  "categoryId": 1,
+  "isActive": true
+}
+
+### LIST PRODUCTS (Public)
+GET http://localhost:5003/api/products

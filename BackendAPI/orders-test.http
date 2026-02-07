@@ -1,0 +1,26 @@
+### LOGIN USER
+POST http://localhost:5003/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "jaipot123@gmail.com",
+  "password": "Password123!"
+}
+
+### PLACE ORDER
+POST http://localhost:5003/api/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqYWlwb3QxMjNAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc3MDQ5MTE1MywiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.g59lU9DlKO--E2lVSaUwp7e5wC6EZnM_7XYKVs7Xrh4
+Content-Type: application/json
+
+{
+  "shippingName": "Jairus Nazareno",
+  "shippingAddress": "Manila, Philippines",
+  "phone": "09123456789",
+  "items": [
+    { "productId": 1, "quantity": 2 }
+  ]
+}
+
+### MY ORDERS
+GET http://localhost:5003/api/orders/my
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqYWlwb3QxMjNAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc3MDQ5MTE1MywiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.g59lU9DlKO--E2lVSaUwp7e5wC6EZnM_7XYKVs7Xrh4

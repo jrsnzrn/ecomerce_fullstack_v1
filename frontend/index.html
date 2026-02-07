@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Capstone Shop</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand bounce">
+      <div class="logo">🛍️</div>
+      <div>
+        <div class="brand-title">Capstone Shop</div>
+        <div class="brand-sub">Modern e-commerce demo</div>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <button id="btnOpenOrders" class="btn ghost">My Orders</button>
+      <button id="btnOpenCart" class="btn primary">
+        Cart <span id="cartCount" class="pill">0</span>
+      </button>
+
+      <div class="auth-chip" id="authChip">
+        <span id="authEmail" class="muted">Not logged in</span>
+        <button id="btnOpenAuth" class="btn tiny">Login</button>
+        <button id="btnLogout" class="btn tiny ghost hidden">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card lift">
+      <div class="hero-left">
+        <h1 class="hero-title">Shop with style.</h1>
+        <p class="hero-text">
+          Browse products, add to cart, checkout, pay, and track orders — powered by your ASP.NET Core API.
+        </p>
+
+        <div class="hero-controls">
+          <input id="searchInput" class="input" placeholder="Search products (e.g., mouse, keyboard)..." />
+          <button id="btnRefresh" class="btn">Refresh</button>
+        </div>
+
+        <div class="tips">
+          <span class="tip">✨ Hover cards bounce</span>
+          <span class="tip">⚡ Fast checkout</span>
+          <span class="tip">🔐 JWT auth</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="stat-grid">
+          <div class="stat card mini bounce-hover">
+            <div class="stat-label">Products</div>
+            <div id="statProducts" class="stat-value">0</div>
+          </div>
+          <div class="stat card mini bounce-hover">
+            <div class="stat-label">In Cart</div>
+            <div id="statCart" class="stat-value">0</div>
+          </div>
+          <div class="stat card mini bounce-hover">
+            <div class="stat-label">Orders</div>
+            <div id="statOrders" class="stat-value">0</div>
+          </div>
+          <div class="stat card mini bounce-hover">
+            <div class="stat-label">Status</div>
+            <div id="statStatus" class="stat-value small">Ready</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Products</h2>
+        <div class="muted">Public catalog • Admin manages products</div>
+      </div>
+
+      <div id="productsGrid" class="grid"></div>
+      <div id="emptyProducts" class="empty hidden">
+        No products found. Try another search.
+      </div>
+    </section>
+  </main>
+
+  <!-- AUTH MODAL -->
+  <div id="authModal" class="modal hidden">
+    <div class="modal-card card pop">
+      <div class="modal-head">
+        <h3>Login / Register</h3>
+        <button class="icon-btn" data-close="authModal">✕</button>
+      </div>
+
+      <div class="tabs">
+        <button id="tabLogin" class="tab active">Login</button>
+        <button id="tabRegister" class="tab">Register</button>
+      </div>
+
+      <div class="form">
+        <label class="label">Email</label>
+        <input id="authEmailInput" class="input" placeholder="you@email.com" />
+
+        <label class="label">Password</label>
+        <input id="authPassInput" class="input" type="password" placeholder="••••••••" />
+
+        <button id="btnAuthSubmit" class="btn primary w100">Login</button>
+        <div id="authMsg" class="msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div id="cartDrawer" class="drawer hidden">
+    <div class="drawer-card card slide">
+      <div class="drawer-head">
+        <h3>Your Cart</h3>
+        <button class="icon-btn" data-close="cartDrawer">✕</button>
+      </div>
+
+      <div id="cartList" class="list"></div>
+
+      <div class="drawer-foot">
+        <div class="row">
+          <div class="muted">Total</div>
+          <div id="cartTotal" class="total">₱0.00</div>
+        </div>
+
+        <button id="btnCheckout" class="btn primary w100">Checkout</button>
+        <button id="btnClearCart" class="btn ghost w100">Clear cart (UI only)</button>
+        <div class="muted small">Checkout uses API: <code>/api/cart/checkout</code></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkoutModal" class="modal hidden">
+    <div class="modal-card card pop">
+      <div class="modal-head">
+        <h3>Checkout</h3>
+        <button class="icon-btn" data-close="checkoutModal">✕</button>
+      </div>
+
+      <div class="form">
+        <label class="label">Shipping Name</label>
+        <input id="shipName" class="input" placeholder="Full name" />
+
+        <label class="label">Shipping Address</label>
+        <input id="shipAddress" class="input" placeholder="Complete address" />
+
+        <label class="label">Phone</label>
+        <input id="shipPhone" class="input" placeholder="09xxxxxxxxx" />
+
+        <button id="btnPlaceOrder" class="btn primary w100">Place Order</button>
+        <div id="checkoutMsg" class="msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDERS MODAL -->
+  <div id="ordersModal" class="modal hidden">
+    <div class="modal-card card pop wide">
+      <div class="modal-head">
+        <h3>My Orders</h3>
+        <button class="icon-btn" data-close="ordersModal">✕</button>
+      </div>
+
+      <div id="ordersList" class="orders"></div>
+      <div id="ordersEmpty" class="empty hidden">No orders yet. Checkout first 🙂</div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

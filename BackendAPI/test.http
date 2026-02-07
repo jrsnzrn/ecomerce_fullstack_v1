@@ -1,0 +1,52 @@
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBjYXBzdG9uZS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3MDQ5Mjk0NiwiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.qteVf-m5qlMQxl5Hin88C-1I79Uz0-8-uBLT70_l-Xk
+
+###
+POST http://localhost:5003/api/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBjYXBzdG9uZS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3MDQ5Mjk0NiwiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.qteVf-m5qlMQxl5Hin88C-1I79Uz0-8-uBLT70_l-Xk
+Content-Type: application/json
+
+{
+  "name": "Computer Parts"
+}
+
+###
+POST http://localhost:5003/api/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBjYXBzdG9uZS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3MDQ5Mjk0NiwiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.qteVf-m5qlMQxl5Hin88C-1I79Uz0-8-uBLT70_l-Xk
+Content-Type: application/json
+
+{
+  "name": "AMD Ryzen 5 5600G",
+  "description": "6-Core 12-Thread Desktop Processor",
+  "price": 8999,
+  "stockQty": 15,
+  "categoryId": 1,
+  "isActive": true
+}
+###
+POST http://localhost:5003/api/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBjYXBzdG9uZS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3MDQ5Mjk0NiwiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.qteVf-m5qlMQxl5Hin88C-1I79Uz0-8-uBLT70_l-Xk
+Content-Type: application/json
+
+{
+  "name": "Corsair Vengeance 16GB DDR4",
+  "description": "2x8GB 3200MHz RAM",
+  "price": 3999,
+  "stockQty": 25,
+  "categoryId": 1,
+  "isActive": true
+}
+###
+POST http://localhost:5003/api/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBjYXBzdG9uZS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3MDQ5Mjk0NiwiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.qteVf-m5qlMQxl5Hin88C-1I79Uz0-8-uBLT70_l-Xk
+Content-Type: application/json
+
+{
+  "name": "NVIDIA GTX 1660 Super",
+  "description": "6GB GDDR6 Graphics Card",
+  "price": 15999,
+  "stockQty": 8,
+  "categoryId": 1,
+  "isActive": true
+}
+
+

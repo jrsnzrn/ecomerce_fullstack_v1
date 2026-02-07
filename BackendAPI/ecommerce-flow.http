@@ -1,0 +1,52 @@
+### LOGIN USER (get token)
+POST http://localhost:5003/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "jaipot123@gmail.com",
+  "password": "Password123!"
+}
+
+### LIST PRODUCTS (public)
+GET http://localhost:5003/api/products
+
+### ADD TO CART (user)
+POST http://localhost:5003/api/cart/add?productId=1&quantity=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqYWlwb3QxMjNAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc3MDQ4OTMyMywiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.YEpa_nnIxyBKAibsHhxsycb-qE8hOJ0eZInFjGmqSIA
+
+### VIEW CART (user)
+GET http://localhost:5003/api/cart
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqYWlwb3QxMjNAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc3MDQ4OTMyMywiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.YEpa_nnIxyBKAibsHhxsycb-qE8hOJ0eZInFjGmqSIA
+
+### CHECKOUT CART (user)
+POST http://localhost:5003/api/cart/checkout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqYWlwb3QxMjNAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc3MDQ4OTMyMywiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.YEpa_nnIxyBKAibsHhxsycb-qE8hOJ0eZInFjGmqSIA
+Content-Type: application/json
+
+{
+  "shippingName": "Jairus Nazareno",
+  "shippingAddress": "Manila, Philippines",
+  "phone": "09123456789",
+  "items": []
+}
+
+### MY ORDERS (user)
+GET http://localhost:5003/api/orders/my
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqYWlwb3QxMjNAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc3MDQ4OTMyMywiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.YEpa_nnIxyBKAibsHhxsycb-qE8hOJ0eZInFjGmqSIA
+
+### PAY ORDER (user) - replace ID
+POST http://localhost:5003/api/orders/1/pay
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqYWlwb3QxMjNAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc3MDQ4OTMyMywiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.YEpa_nnIxyBKAibsHhxsycb-qE8hOJ0eZInFjGmqSIA
+
+### LOGIN ADMIN (get admin token)
+POST http://localhost:5003/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@capstone.com",
+  "password": "Admin123!"
+}
+
+### ADMIN: SHIP ORDER - replace ID
+PUT http://localhost:5003/api/orders/1/status?status=Shipped
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBjYXBzdG9uZS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3MDQ4OTQzOSwiaXNzIjoiQmFja2VuZEFQSSIsImF1ZCI6IkJhY2tlbmRBUElVc2VycyJ9.-ik0TBbFRcmaYyAWWMcy5emRVwHadJjSAh3LuLxKlx0
